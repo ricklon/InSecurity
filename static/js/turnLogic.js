@@ -10,7 +10,8 @@ var defenderMoves = [];
 var attackerMoves = [];
 var score = 0;
 function startGameLogic() {
-	document.getElementById("infoArea").innerText=0;
+	document.getElementById("moves").innerText=0;
+  document.getElementById("infoArea").innerText="";
 	connection.on('open', function() {
 		connection.on('data', function(data) {
 			if(playerType=="attacker") {
@@ -41,7 +42,7 @@ function startGameLogic() {
 						'message' : { 'text' : "Your attack failed!" }
 					});
 				}
-				document.getElementById("infoArea").innerText++;
+				document.getElementById("moves").innerText++;
 				canMove=true;
 			}
 			else {
@@ -106,7 +107,7 @@ function resolveConflict() {
 	}
 	defenderMoved=false;
 	attackerMoved=false;
-	document.getElementById("infoArea").innerText++;
+	document.getElementById("moves").innerText++;
 }
 
 function gameOver(reason) {

@@ -20,18 +20,13 @@
 
 }
 
-#infoArea {
-  text-align: center;
-
-}
-
 #gameArea {
   border:1px solid #000000;
   display: none;
-  //z-index: 1;
-  //position: absolute; 
-  //left: 0px; 
-  //top: 0px; 
+  z-index: 1;
+//  position: absolute; 
+//  left: 0px; 
+//  top: 0px; 
 }
 
 //#gameBackground {
@@ -42,7 +37,7 @@
 //  left: 0px; 
 // top: 0px; 
 //}
-//#area {
+#area {
   //position: relative;
 
-//}
+}

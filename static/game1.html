@@ -6,10 +6,9 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/site.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="/css/site.css" rel="stylesheet" >
   </head>
-  <body>
     <body class="home">
        <audio controls autoplay  preload loop>
            <source src="music/AnotherLevel.mp3" type="audio/mpeg">
@@ -21,26 +20,25 @@
         <h1 class="title text-center">InSecurity</h1>
         <div class="jumbotron">
           <div id="Intro"></div>
-          <div align="center">
             <div id="infoArea">
-              <div id="player1" onClick="chooseDefender()">
-                <p>Defender</p><img src="img/TriangleDefender.png" />
+              <div id="player1" >
+                <p>Defender</p><img alt="Defender Icon" src="img/TriangleDefender.png" />
               </div>
-              <div id="player2"  onClick="chooseAttacker()">
-                <p>Attacker</p><img src="img/TriangleAttacker.png" />
+              <div id="player2" >
+                <p>Attacker</p><img alt="Attacker Icon" src="img/TriangleAttacker.png" />
               </div>
             </div>
+            <div>Moves: <span id="moves"></span> <div>
             <div id="playerInfo"></div>
 
             <canvas id="gameArea">
             </canvas>
-            <a href="gamepicker.html"  class="btn btn-primary btn-lg play" role="button" >&lt;- Back</a>
+            <a href="game1.html"  class="btn btn-primary btn-lg play" role="button" >&lt;- Back</a>
           </div>
         </div>
-      </div>
 
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-  <script type="text/javascript" src="/bower_components/jquery/jquery.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/bower_components/peerjs/peer.js"></script>
 	<script type="text/javascript" src="/js/lobby.js"></script>
@@ -50,10 +48,19 @@
 	    $.getJSON('/js/level1.json', function (data) {
 		levelLayout=data;
 		});
-	</script>
-	    <link href="/css/bootstrap-notify.css" rel="stylesheet" />
-	    <link href="/css/alert-bangify.css" rel="stylesheet" />
-	    <link href="/css/alert-blackgloss.css" rel="stylesheet" />
+	      $(document).ready(function() {
+        $("#player1").on("click",function() {
+          chooseDefender();
+        });
+
+        $("#player2").on("click",function() {
+          chooseAttacker();
+        });
+      });
+ </script>
+	    <link href="/css/bootstrap-notify.css" rel="stylesheet"  >
+	    <link href="/css/alert-bangtidy.css" rel="stylesheet"  >
+	    <link href="/css/alert-blackgloss.css" rel="stylesheet"  >
 	    <script src="/js/bootstrap-notify.js"></script>
   </body>
 </html>
